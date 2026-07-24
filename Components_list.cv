@@ -1,0 +1,14 @@
+Components Required
+
+• ESP32 DevKit V1 – 1
+• DS1307 Real-Time Clock (RTC) Module – 1
+• SSD1306 OLED Display (128×64, I2C) – 1
+• SG90 Micro Servo Motor – 1
+• Push Button Switch – 1
+• Active Buzzer – 1
+• Red LED – 1
+• Green LED – 1
+• 220 Ω Resistors – 2
+• Jumper Wires – As Required
+• Breadboard – 1
+• USB Cable (for ESP32 Programming) – 1

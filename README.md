@@ -130,6 +130,16 @@ The figure below shows the complete circuit implemented in the Wokwi simulator.
 
 ---
 
+# 🏗 System Architecture
+
+The following diagram illustrates the overall architecture of the ESP32 Smart Medicine Reminder and Automatic Pill Dispensing System. The ESP32 acts as the central controller and communicates with all peripherals, including the RTC module, OLED display, servo motor, buzzer, LEDs, and push button.
+
+The DS1307 RTC continuously provides the current time to the ESP32 through the I²C interface. When the scheduled reminder time is reached, the ESP32 activates the buzzer, blinks the red LED, displays a reminder on the OLED screen, and opens the medicine compartment using the servo motor. After the user presses the push button to confirm medicine intake, the ESP32 stops the reminder, closes the compartment, blinks the green LED, and displays a confirmation message.
+
+![System Architecture](System_Architecture.png)
+
+---
+
 ## 📄 Components List
 
 The Components List contains all the hardware components required to build this project.

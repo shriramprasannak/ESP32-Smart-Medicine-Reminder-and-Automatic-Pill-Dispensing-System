@@ -1,64 +1,120 @@
 # 💊 ESP32 Smart Medicine Reminder and Automatic Pill Dispensing System
 
-## 📌 Project Overview
+## 🚀 IoT-Based Healthcare Automation using ESP32
 
-The **ESP32 Smart Medicine Reminder and Automatic Pill Dispensing System** is an IoT-based healthcare project developed to help patients take their medications on time. The system uses an ESP32 microcontroller and a DS1307 Real-Time Clock (RTC) module to monitor the current time and trigger medicine reminders automatically.
+An intelligent embedded healthcare solution that provides **timely medicine reminders**, **automatic pill dispensing**, and **user confirmation** using the ESP32 microcontroller, Real-Time Clock (RTC), OLED display, servo motor, buzzer, LEDs, and push button.
 
-At the scheduled time, the OLED display shows a reminder message, the buzzer sounds, the red LED blinks, and the servo motor opens the medicine compartment. After taking the medicine, the user presses the push button to confirm, upon which the buzzer stops, the servo closes the compartment, the OLED displays **"Medicine Taken"**, and the green LED blinks to indicate successful confirmation.
+---
+
+# 🌟 Project Highlights
+
+- ⏰ Real-Time Clock (RTC) based medicine reminders
+- 💊 Automatic pill dispensing using a servo motor
+- 📺 OLED display for reminder and confirmation messages
+- 🔔 Audible alerts using an active buzzer
+- 🔴 Visual reminder using a red LED
+- 🟢 Confirmation indication using a green LED
+- 🔘 Push button for medicine intake confirmation
+- ⚡ ESP32-based embedded healthcare system
+- 🌐 Wokwi simulation support
+- 🖥 Ready for KiCad PCB implementation
+
+---
+
+# 📑 Table of Contents
+
+- 🚀 Overview
+- 🎯 Objectives
+- ✨ Key Features
+- 🛠 Hardware Components
+- 🔌 Circuit Connections
+- 🏗 System Architecture
+- 💻 Software & Tools
+- ⚙ Working Principle
+- 📸 Project Gallery
+- 📂 Project Files
+- 📁 Repository Structure
+- 🚀 Future Roadmap
+- 📊 Project Status
+- ⚠ Disclaimer
+- 👨‍💻 Author
+- 📄 License
+
+---
+
+# 🚀 Overview
+
+The **ESP32 Smart Medicine Reminder and Automatic Pill Dispensing System** is an IoT-enabled embedded healthcare project designed to help patients take their medications on time.
+
+The system continuously monitors the current time using the **DS1307 Real-Time Clock (RTC)** module. Once the scheduled medicine time is reached, the ESP32 automatically activates multiple reminder mechanisms including:
+
+- 🔔 Buzzer Alert
+- 🔴 Red LED Indicator
+- 📺 OLED Display Notification
+- 💊 Servo Motor for Automatic Pill Dispensing
+
+After taking the medicine, the user confirms the action by pressing the push button. The ESP32 then stops the alert, closes the medicine compartment, displays **"Medicine Taken"**, and blinks the green LED to indicate successful medicine intake.
+
+This project demonstrates the integration of **Embedded Systems**, **Internet of Things (IoT)**, **Real-Time Control**, and **Healthcare Automation**.
 
 ---
 
 # 🎯 Objectives
 
 - Provide timely medicine reminders.
-- Reduce the chances of missing medications.
-- Automate medicine dispensing using a servo motor.
-- Display reminder messages on an OLED display.
-- Provide audible and visual alerts.
-- Allow the user to confirm medicine intake.
+- Improve medication adherence.
+- Automate pill dispensing.
+- Minimize human error.
+- Provide clear visual and audio alerts.
+- Enable user confirmation after medicine intake.
+- Demonstrate an IoT-based healthcare application.
 
 ---
 
-# ✨ Features
+# ✨ Key Features
 
-- ⏰ Real-Time Clock (RTC) based reminders
-- 📺 OLED Display for notifications
-- 💊 Automatic pill dispensing using Servo Motor
-- 🔴 Red LED reminder indication
-- 🟢 Green LED confirmation indication
-- 🔔 Active Buzzer alert
-- 🔘 Push Button confirmation
-- ⚡ ESP32-based embedded system
-- 🌐 Wokwi simulation support
+| Feature | Description |
+|----------|-------------|
+| ⏰ RTC Scheduling | Real-time medicine reminders |
+| 💊 Servo Motor | Automatic pill compartment opening |
+| 📺 OLED Display | Reminder & confirmation messages |
+| 🔴 Red LED | Reminder indication |
+| 🟢 Green LED | Medicine taken confirmation |
+| 🔔 Active Buzzer | Audible medicine alert |
+| 🔘 Push Button | User confirmation |
+| ⚡ ESP32 Controller | Main processing unit |
+| 🌐 Wokwi Compatible | Complete simulation support |
 
 ---
 
-# 🛠 Components Required
+# 🛠 Hardware Components
 
-- ESP32 DevKit V1
-- DS1307 RTC Module
-- SSD1306 OLED Display (128×64, I2C)
-- SG90 Micro Servo Motor
-- Push Button Switch
-- Active Buzzer
-- Red LED
-- Green LED
-- 220Ω Resistors (2)
-- Jumper Wires
-- Breadboard
+| Component | Quantity |
+|-----------|---------:|
+| ESP32 DevKit V1 | 1 |
+| DS1307 RTC Module | 1 |
+| SSD1306 OLED Display | 1 |
+| SG90 Servo Motor | 1 |
+| Push Button | 1 |
+| Active Buzzer | 1 |
+| Red LED | 1 |
+| Green LED | 1 |
+| 220Ω Resistor | 2 |
+| Breadboard | 1 |
+| Jumper Wires | As Required |
 
 ---
 
 # 🔌 Circuit Connections
 
-| Component | ESP32 Pin |
+| Component | ESP32 GPIO |
 |------------|-----------|
 | RTC SDA | GPIO21 |
 | RTC SCL | GPIO22 |
 | OLED SDA | GPIO21 |
 | OLED SCL | GPIO22 |
-| Servo PWM | GPIO18 |
-| Buzzer | GPIO25 |
+| Servo Motor | GPIO18 |
+| Active Buzzer | GPIO25 |
 | Red LED | GPIO26 |
 | Green LED | GPIO27 |
 | Push Button | GPIO19 |
@@ -69,169 +125,216 @@ At the scheduled time, the OLED display shows a reminder message, the buzzer sou
 
 ---
 
-# 📂 Project Files
-
-| File | Description |
-|------|-------------|
-| ESP32_Smart_Medicine_Reminder.ino | Main Arduino source code |
-| diagram.json | Wokwi simulation circuit |
-| Circuit_Design.png | Circuit diagram image |
-| Schematic_Diagram.pdf | Schematic wiring diagram |
-| Components_list.csv | Hardware components list |
-| Take_medicine.png | Reminder output screenshot |
-| Medicine_taken.png | Confirmation output screenshot |
-| README.md | Project documentation |
-
----
-
-# ⚙ Software Requirements
-
-- Arduino IDE
-- Wokwi Simulator
-- ESP32 Board Package
-
-## Required Libraries
-
-- Wire.h
-- RTClib
-- Adafruit_GFX
-- Adafruit_SSD1306
-- ESP32Servo
-
----
-
-# 🚀 Working Procedure
-
-1. ESP32 continuously reads the current time from the DS1307 RTC module.
-2. The OLED displays the current system time.
-3. At the reminder time:
-   - Servo motor opens the medicine compartment.
-   - Red LED starts blinking.
-   - Buzzer starts beeping.
-   - OLED displays **"Take Medicine"**.
-4. The user presses the push button after taking the medicine.
-5. The system:
-   - Stops the buzzer.
-   - Turns OFF the red LED.
-   - Closes the servo motor.
-   - Displays **"Medicine Taken"** on the OLED.
-   - Blinks the green LED for confirmation.
-6. The system returns to standby mode and waits for the next reminder.
-
----
-
-# 📷 Project Output
-
-## 🖥 Circuit Design
-
-The figure below shows the complete circuit implemented in the Wokwi simulator.
-
-![Circuit Design](Circuit_Design.png)
-
----
-
 # 🏗 System Architecture
 
-The following diagram illustrates the overall architecture of the ESP32 Smart Medicine Reminder and Automatic Pill Dispensing System. The ESP32 acts as the central controller and communicates with all peripherals, including the RTC module, OLED display, servo motor, buzzer, LEDs, and push button.
+The ESP32 acts as the central controller of the system.
 
-The DS1307 RTC continuously provides the current time to the ESP32 through the I²C interface. When the scheduled reminder time is reached, the ESP32 activates the buzzer, blinks the red LED, displays a reminder on the OLED screen, and opens the medicine compartment using the servo motor. After the user presses the push button to confirm medicine intake, the ESP32 stops the reminder, closes the compartment, blinks the green LED, and displays a confirmation message.
+It continuously reads the current time from the DS1307 RTC module through the I²C interface.
+
+When the preset medicine time is reached, the ESP32:
+
+- Activates the buzzer
+- Blinks the red LED
+- Displays **Take Medicine** on the OLED
+- Rotates the servo motor to open the medicine compartment
+
+After the user presses the confirmation button, the ESP32:
+
+- Stops the buzzer
+- Turns OFF the red LED
+- Closes the servo
+- Displays **Medicine Taken**
+- Blinks the green LED
+
+The system then returns to standby mode and waits for the next scheduled reminder.
 
 ![System Architecture](System_Architecture.png)
 
 ---
 
-## 📄 Components List
+# 💻 Software & Tools
 
-The Components List contains all the hardware components required to build this project.
+| Software | Purpose |
+|----------|---------|
+| Arduino IDE | Code Development |
+| Wokwi Simulator | Circuit Simulation |
+| KiCad | PCB Design |
+| GitHub | Version Control |
 
-**Download:**  
-📄 [Components_list.csv](Components_list.csv)
+## Required Libraries
 
----
-
-## 🔧 Wokwi Circuit Design
-
-The `diagram.json` file contains the complete Wokwi simulation circuit. It can be imported directly into Wokwi for simulation and testing.
-
-**Download:**  
-📄 [diagram.json](diagram.json)
-
----
-
-## 📑 Circuit Schematic
-
-The schematic diagram illustrates the complete wiring connections between the ESP32, RTC module, OLED display, LEDs, servo motor, buzzer, and push button.
-
-**Download:**  
-📄 [Schematic_Diagram.pdf](Schematic_Diagram.pdf)
+```cpp
+Wire.h
+RTClib
+Adafruit_GFX
+Adafruit_SSD1306
+ESP32Servo
+```
 
 ---
 
-## 💻 Arduino Source Code
+# ⚙ Working Principle
 
-The Arduino sketch contains the complete implementation of the Smart Medicine Reminder System.
+### Step 1
 
-**Download:**  
-📄 [ESP32_Smart_Medicine_Reminder.ino](ESP32_Smart_Medicine_Reminder.ino)
+ESP32 reads the current time from the RTC.
+
+↓
+
+### Step 2
+
+Current time is displayed on the OLED.
+
+↓
+
+### Step 3
+
+When reminder time arrives:
+
+- Servo opens the medicine compartment.
+- OLED displays **Take Medicine**.
+- Red LED blinks.
+- Buzzer sounds.
+
+↓
+
+### Step 4
+
+The user takes the medicine.
+
+↓
+
+### Step 5
+
+The user presses the push button.
+
+↓
+
+### Step 6
+
+The ESP32 confirms medicine intake.
+
+↓
+
+### Step 7
+
+The servo motor closes the medicine compartment.
+
+↓
+
+### Step 8
+
+The green LED blinks.
+
+↓
+
+### Step 9
+
+The system returns to standby mode and waits for the next scheduled reminder.
 
 ---
 
-## 💊 Medicine Reminder Output
+# 📸 Project Gallery
 
-When the reminder time is reached, the OLED displays **"Take Medicine"**, the red LED blinks, the buzzer sounds, and the servo opens the medicine compartment.
+## Circuit Design
+
+![Circuit Design](Circuit_Design.png)
+
+---
+
+## Medicine Reminder
 
 ![Take Medicine](Take_medicine.png)
 
 ---
 
-## ✅ Medicine Confirmation Output
-
-After pressing the push button, the OLED displays **"Medicine Taken"**, the servo closes, the buzzer stops, and the green LED blinks for confirmation.
+## Medicine Confirmation
 
 ![Medicine Taken](Medicine_taken.png)
 
 ---
 
+# 📂 Project Files
+
+| File | Description |
+|------|-------------|
+| ESP32_Smart_Medicine_Reminder.ino | Arduino Source Code |
+| diagram.json | Wokwi Circuit |
+| Circuit_Design.png | Circuit Design |
+| System_Architecture.png | System Architecture |
+| Schematic_Diagram.pdf | Circuit Schematic |
+| Components_list.csv | Components List |
+| README.md | Project Documentation |
+
+---
+
 # 📁 Repository Structure
 
-```
+```text
 ESP32-Smart-Medicine-Reminder/
 │
 ├── README.md
 ├── ESP32_Smart_Medicine_Reminder.ino
 ├── diagram.json
 ├── Circuit_Design.png
+├── System_Architecture.png
 ├── Schematic_Diagram.pdf
 ├── Components_list.csv
 ├── Take_medicine.png
-└── Medicine_taken.png
+├── Medicine_taken.png
+└── LICENSE
 ```
 
 ---
 
-# 📈 Future Enhancements
+# 🚀 Future Roadmap
 
-- 📱 Mobile Application Integration
-- ☁ Cloud Data Logging
-- 📶 Wi-Fi Notifications
-- 📩 SMS Alerts using GSM
-- 💊 Multiple Medicine Scheduling
-- 🎤 Voice Reminder System
-- 📊 Medicine Intake History
-- 👨‍⚕ Patient Health Monitoring Integration
+- [ ] Mobile Application Integration
+- [ ] Wi-Fi Notifications
+- [ ] Firebase Cloud Database
+- [ ] SMS Alerts using GSM
+- [ ] Voice Reminder System
+- [ ] Cloud Dashboard
+- [ ] Battery Backup
+- [ ] Multiple User Profiles
+- [ ] Medicine Intake Analytics
+- [ ] AI-Based Reminder Suggestions
 
 ---
 
-# 👨‍💻 Developed By
+# 📊 Project Status
+
+| Module | Status |
+|--------|--------|
+| Hardware Design | ✅ Completed |
+| Embedded Programming | ✅ Completed |
+| Wokwi Simulation | ✅ Completed |
+| Documentation | ✅ Completed |
+| KiCad PCB Design | 🚧 In Progress |
+| Cloud Integration | 🔜 Planned |
+
+---
+
+# ⚠ Disclaimer
+
+This project was developed for educational and academic purposes. It demonstrates embedded systems and IoT concepts and **should not be used in real-world medical applications without proper testing, validation, and regulatory approval.**
+
+---
+
+# 👨‍💻 Author
 
 **Shriram Prasanna K**
 
-B.Tech – Electronics and Communication Engineering (ECE)
+**Bachelor of Technology (B.Tech)**
 
-VIT-AP University
+**Electronics and Communication Engineering (ECE)**
+
+**VIT-AP University**
 
 ---
 
 # 📄 License
 
-This project is developed for educational and learning purposes. Feel free to use, modify, and enhance it for academic or personal projects.
+This project is released for **educational and learning purposes**.
+
+You are welcome to **use, modify, and enhance** this project for academic, research, and personal learning with appropriate credit to the original work.
